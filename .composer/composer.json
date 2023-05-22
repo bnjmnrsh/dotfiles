@@ -1,0 +1,7 @@
+{
+    "require": {
+        "laravel/valet": "^4.0",
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^2.3"
+    }
+}

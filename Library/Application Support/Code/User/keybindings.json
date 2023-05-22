@@ -1,0 +1,105 @@
+// Place your key bindings in this file to override the defaults
+[
+  /**
+   * File explorer, and set focus
+   **/
+  {
+    "key": "cmd+k cmd+e",
+    "command": "workbench.view.explorer && filesExplorerFocus"
+  },
+    {
+    "key": "cmd+k cmd+g",
+    "command": "vscode-chatgpt.view.focus"
+  },
+  /**
+   * File explorer specific shortcuts
+   **/
+  {
+    "key": "cmd+k e",
+    "command": "-workbench.files.action.focusOpenEditorsView",
+    "when": "workbench.explorer.openEditorsView.active"
+  },
+  {
+    "key": "cmd+d",
+    "command": "duplicate.execute",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  /**
+   * Debugger
+   **/
+  {
+    "key": "cmd+k cmd+d",
+    "command": "workbench.view.debug"
+  },
+  /**
+   * Extensions
+   **/
+  {
+    "key": "cmd+k cmd+x",
+    "command": "workbench.extensions.action.showInstalledExtensions"
+  },
+  /**
+   * Git interface
+   **/
+  {
+    "key": "cmd+k cmd+v",
+    "command": "workbench.view.scm"
+  },
+  /**
+   * Git commit shortcut
+   **/
+  {
+    "key": "cmd+enter",
+    "command": "git.commit",
+    "when": "activeViewlet == 'workbench.view.scm'"
+  },
+
+  /**
+   * Terminal
+   **/
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+k cmd+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "cd '${fileDirname}'\u000D" },
+     //"when": "terminalFocus"
+  },
+  // for micro do nothing
+  { "key": "ctrl+q", "command": "", "when": "!terminalFocus" },
+
+  {
+    "key": "cmd+k cmd+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus && terminalProcessSupported"
+},
+{
+    "key": "shift+cmd+c shift+cmd+c",
+    "command": "phpCreateClass.createClass"
+},
+{
+    "key": "shift+cmd+i shift+cmd+i",
+    "command": "phpCreateClass.createInterface"
+},
+{
+    "key": "shift+cmd+t shift+cmd+t",
+    "command": "phpCreateClass.createTrait"
+}
+]

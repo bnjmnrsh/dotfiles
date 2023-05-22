@@ -1,0 +1,20 @@
+[core]
+	excludesfile = /Users/anachronistic/.gitignore_global
+	editor = micro
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Ben Rush
+	email = bnjmnrsh@gmail.com
+[commit]
+	template = /Users/b.rush/.stCommitMsg
+[credential]
+	username = bnjmnrsh
+[push]
+	default = simple
+[init]
+	defaultBranch = main
