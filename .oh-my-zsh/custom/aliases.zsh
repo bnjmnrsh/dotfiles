@@ -2,7 +2,6 @@
 
 # Start new sessions in WebDev
 cd ~/Documents/WebDev
-
 WebDev=~/Documents/WebDev
 
 # Set up alias for config to manage dot files with git
@@ -12,9 +11,18 @@ alias config='/usr/bin/git --git-dir=/Users/anachronistic/.cfg/ --work-tree=/Use
 alias code="open -a '/Applications/Visual Studio Code.app'"
 alias md="open -a 'Macdown'"
 
-#CLI
+# CLI
 # screenfetch for terminal screenshots
 alias screenfetch='screenfetch -E'
+
+# Volta - JavaScript tool manager
+# https://volta.sh/
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Use better editor
+#export EDITOR='micro'
+#alias nano='micro'
 
 # Composer
 alias composer="php /usr/local/bin/composer.phar"
