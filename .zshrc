@@ -1,13 +1,10 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/anachronistic/.oh-my-zsh"
 
 ZSH_THEME=cobalt2
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# Can cause issues with multiline prompts (before zsh 5.7.1)
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
