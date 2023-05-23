@@ -24,4 +24,4 @@ alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias restart="source ~/.zshrc && clear"
 
 # Load project specifc aliases (.gitignored)
-[ -r .project-aliases ] && source .project-aliases
+[ -r ~/.oh-my-zsh/custom/.project-aliases ] && source ~/.oh-my-zsh/custom/.project-aliases
