@@ -1,24 +1,25 @@
-*~
-._*
-*.log
+**/*~
+**/._*
+**/*.log
 **/logs
 **/logs/debug.log
 
-vendor
-node_modules
-build
-npm-debug.log
-.env
+**/vendor
+**/node_modules
+**/npm-debug.log
 
+**/.env
+**/*.env
+**/*.sql
 
-.DS_Store
-.DS_Store?
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+**/.vscode
+**/.DS_Store
+**/.DS_Store?
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
 
-
-*.codekit3
-.vscode
-*.code-workspace
+**/*.codekit3
+**/.vscode
+**/*.code-workspace
