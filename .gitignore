@@ -1,1 +1,4 @@
 **/.DS_Store
+
+# Project specific
+~/.oh-my-zsh/custom/.project-aliases
