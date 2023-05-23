@@ -15,11 +15,6 @@ alias md="open -a 'Macdown'"
 # screenfetch for terminal screenshots
 alias screenfetch='screenfetch -E'
 
-# Volta - JavaScript tool manager
-# https://volta.sh/
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # Use better editor
 #export EDITOR='micro'
 #alias nano='micro'
