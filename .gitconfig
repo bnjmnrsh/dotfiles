@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/anachronistic/.gitignore_global
-	editor = micro
+	editor = nano
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
