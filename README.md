@@ -2,18 +2,18 @@
 
 ## Bare git repo
 
-In order to not interfere with any other git repos in this space, this dotfiles repo has been set up 'bare' (.cfg) with `config` set as alias to `git`.
+To not interfere with any other git repos that may be the filesystem root, this dotfiles repo has been set up as 'bare' (.cfg) with `config` set as an alias to `git`.
 
 ### Setup:
 
 ```
-# Set up repo bare so as to not conflict with any other .git that may be in $HOME
+# Set up repo bare to not conflict with any other .git that may be in $HOME
 git init --bare $HOME/.cfg
 
 # Custom alias to our dotfiles instance of git to avoid confusion
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# Don't show untracked files as this would be our entire system
+# Don't show untracked files, as this would be our entire system
 config config --local status.showUntrackedFiles no
 
 #  Add the path to .zshrc
