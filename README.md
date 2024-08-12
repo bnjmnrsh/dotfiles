@@ -2,7 +2,7 @@
 
 ## Bare git repo
 
-To not interfere with any other git repos that may be the filesystem root, this dotfiles repo has been set up as 'bare' (.cfg) with `config` set as an alias to `git`.
+To not interfere with any other git repos that may be the filesystem root, this dotfiles repo has been set up as 'bare' (.cfg) with `config` set as an alias to `git`. Therefore use `config` as a substitute for `git` in any commands related to manageing this repo.  
 
 ### Setup:
 
