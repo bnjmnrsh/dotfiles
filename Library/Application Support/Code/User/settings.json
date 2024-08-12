@@ -1,21 +1,21 @@
-    {
-    "window.zoomLevel": 1,
+{
     "emmet.syntaxProfiles": {
     "tpl": "html"
     },
     "emmet.includeLanguages": {
-    "smarty": "html"
+        "smarty": "html"
     },
     "emmet.triggerExpansionOnTab": true,
     "files.defaultLanguage": "js",
     "files.trimTrailingWhitespace": true,
     "files.associations": {
-    "*.inc": "html",
-    "*.pinc": "html",
-    "*.tmpl": "smarty",
-    "*.php": "php",
-    ".babelrc.js": "javascript",
-    "*.hbs": "handlebars"
+        "*.inc": "html",
+        "*.pinc": "html",
+        "*.tmpl": "smarty",
+        "*.php": "php",
+        ".babelrc.js": "javascript",
+        "*.hbs": "handlebars",
+        "*.mjs": "javascript"
     },
 
     "auto-close-tag.fullMode": true,
@@ -34,16 +34,17 @@
     "phpserver.phpConfigPath": "./php.ini ",
     "phpCreateClass.finalClass": true,
     "phpCreateClass.strictTypes": true,
-    "intelephense.phpdoc.useFullyQualifiedNames": true,
+
     "namespaceResolver.sortNatural": true,
     "namespaceResolver.sortAlphabetically": true,
     "namespaceResolver.sortOnSave": true,
+    "php.validate.executablePath": "/usr/local/bin/php",
 
-    "intelephense.stubs": [],
+
 
     "smarty.highlight": true,
     "beautify.language": {
-    "html": ["smarty"]
+        "html": ["smarty"]
     },
 
     // Language: HTML
@@ -82,7 +83,7 @@
     "stylelint.validate": [
         "css",
         "html",
-        "javascriptreact",
+        // "javascriptreact",
         "less",
         "markdown",
         "postcss",
@@ -92,85 +93,98 @@
         "source.markdown.math",
         "styled-css",
         "sugarss",
-        "svelte",
         "typescriptreact",
         "vue",
         "vue-html",
         "vue-postcss",
+        "svelte",
+        "astro",
         "xml",
-        "xsl"
+        "xsl",
     ],
     "stylelint.reportNeedlessDisables": true,
     "stylelint.reportInvalidScopeDisables": true,
 
     // Spelling
-    "spellright.language": ["en"],
-    "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext",
-    "javascript",
-    "html",
-    "php"
+    "spellright.language": [
+        "en_GB",
+        "en"
     ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "html",
+        "php",
+        "javascript",
+        "css",
+        "scss"
+    ],
+    "spellright.groupDictionaries": false,
+    "spellright.suggestionsInHints": true,
+    "spellright.recheckOnSave": true,
+    "spellright.languageContext": {
+        "strings": [ "en-GB" ],
+        "comments": [ "en-GB" ]
+    },
+
 
     // Formatters
     "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "[xml]": {
-
-
-    },
+    "[xml]": {},
     "[javascript]": {
-
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[php]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "StoilDobreff.php-resolver",
     },
     "[smarty]": {
-    "editor.defaultFormatter": "aswinkumar863.smarty-template-support",
+        // "editor.defaultFormatter": "aswinkumar863.smarty-template-support",
     },
     "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+        "breadcrumbs.showConstants": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[handlebars]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
     },
 
     "prettier.requireConfig": true,
-
-    // Silence the noise
-    "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": true,
-    "workbench.sideBar.location": "right",
-    "workbench.iconTheme": "material-icon-theme", // Medium
+    "workbench.editor.showTabs": "multiple",
+    "workbench.sideBar.location": "right", // Medium
     "workbench.statusBar.visible": true,
-    "workbench.editor.untitled.hint": "hidden",
     "breadcrumbs.enabled": true,
 
     // A nice font
     // "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontFamily": "Fira Code",
     // "editor.fontFamily": "Inconsolata for Powerline",
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
     "editor.accessibilitySupport": "off",
@@ -187,39 +201,41 @@
     "editor.minimap.enabled": false,
     "editor.linkedEditing": true,
     "editor.codeActionsOnSave": {
-    "source.fixAll": true
+        "source.fixAll": "explicit"
     },
     "explorer.confirmDragAndDrop": false,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
-
     // Color
     "colorInfo.languages": [
-
-    {
-    "selector": "js",
-    "colors": "css"
-    },
-    {
-    "selector": "css",
-    "colors": "css"
-    },
-    {
-    "selector": "sass",
-    "colors": "css"
-    },
-    {
-    "selector": "scss",
-    "colors": "css"
-    },
-    {
-    "selector": "less",
-    "colors": "css"
-    },
-    {
-    "selector": "hbs",
-    "colors": "css"
-    }
+        {
+            "selector": "js",
+            "colors": "css"
+        },
+        {
+            "selector": "css",
+            "colors": "css"
+        },
+        {
+            "selector": "sass",
+            "colors": "css"
+        },
+        {
+            "selector": "scss",
+            "colors": "css"
+        },
+        {
+            "selector": "less",
+            "colors": "css"
+        },
+        {
+            "selector": "hbs",
+            "colors": "css"
+        },
+        {
+            "selector": "astro",
+            "colors": "css"
+        },
     ],
 
     // Git
@@ -229,7 +245,7 @@
     "git.allowForcePush": true,
     "git.ignoreRebaseWarning": true,
     "yaml.schemas": {
-        "file:///Users/anachronistic/.vscode/extensions/atlassian.atlascode-3.0.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/anachronistic/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.bitbucket.enabled": true,
     "atlascode.jira.enabled": true,
@@ -252,6 +268,7 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
 
     "liveServer.settings.donotVerifyTags": true,
     "liveServer.settings.donotShowInfoMsg": true,
@@ -264,100 +281,184 @@
     "npm.keybindingsChangedWarningShown": true,
     "tabnine.experimentalAutoImports": true,
     "vscode-edge-devtools.browserFlavor": "Default",
-    "spellright.addToSystemDictionary": true,
     "spellright.configurationScope": "user",
     "editor.fontSize": 14,
     "editor.lineHeight": 1.8,
-    "workbench.colorTheme": "Solarized Light",
     "editor.fontVariations": false,
-    "workbench.preferredDarkColorTheme": "Monokai",
-    "workbench.colorCustomizations": {
-    // Solarized dark https://glitchbone.github.io/vscode-base16-term/#/solarized-dark
-        "[Solarized Light]":{
-            "tab.inactiveBackground": "#e8d85f79",
-            "tab.activeBorder": "#fde001",
-            "tab.border": "#d0e7e7",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.preferredDarkColorTheme": "Bnjmnrsh Solarized Light",
 
-            "editorGroupHeader.tabsBorder": "#fde001",
-            "editorGroupHeader.border": "#fde001",
-            "editorGroup.emptyBackground": "#d0e7e7",
-
-            "sideBar.background": "#002B36",
-            "sideBar.foreground": "#d0e7e7",
-            "sideBar.border": "#fde001",
-            "sideBar.dropBackground":  "#fde001",
-            "sideBarSectionHeader.border":  "#0c4351",
-            "sideBarSectionHeader.foreground":  "#0c4351",
-            "sideBarSectionHeader.background":  "#d0e7e7",
-            "sideBarTitle.foreground":  "#fde001",
-
-            "list.errorForeground": "#ff0000",
-            "list.hoverBackground": "#0c4351",
-            "list.hoverForeground": "#d0e7e7",
-
-            "list.activeSelectionIconForeground":  "#fde001",
-            "list.inactiveSelectionBackground": "#e8d85f",
-            "list.inactiveSelectionForeground": "#0c4351",
-            "list.activeSelectionForeground": "#0c4351",
-            "list.activeSelectionBackground": "#fde001",
-
-            "scrollbarSlider.background":"#d0e7e7",
-            "scrollbarSlider.activeBackground":"#d0e7e7",
-            "scrollbarSlider.hoverBackground": "#299df0",
-
-            "terminal.background":"#002B36",
-            "terminal.foreground":"#d0e7e7",
-            "terminalCursor.background":"#93A1A1",
-            "terminalCursor.foreground":"#93A1A1",
-            "terminal.ansiBlack":"#002B36",
-            "terminal.ansiBlue":"#299df0",
-            "terminal.ansiBrightBlack":"#657B83",
-            "terminal.ansiBrightBlue":"#268BD2",
-            "terminal.ansiBrightCyan":"#3ee3d5",
-            "terminal.ansiBrightGreen":"#859900",
-            "terminal.ansiBrightMagenta":"#6C71C4",
-            "terminal.ansiBrightRed":"#DC322F",
-            "terminal.ansiBrightWhite":"#FDF6E3",
-            "terminal.ansiBrightYellow":"#fff200",
-            "terminal.ansiCyan":"#32aba1",
-            "terminal.ansiGreen":"#c2df0a",
-            "terminal.ansiMagenta":"#6C71C4",
-            "terminal.ansiRed":"#DC322F",
-            "terminal.ansiWhite":"#93A1A1",
-            "terminal.ansiYellow":"#fde001",
-
-            "panel.background": "#ddebee",
-            "panelTitle.activeBorder": "#002B36",
-            "panelTitle.activeForeground":  "#32aba1",
-            "panelTitle.inactiveForeground": "#506866",
-            "panel.border": "#fde001",
-            "panel.dropBorder": "#fde001",
-
-            "statusBar.background": "#002B36",
-            "statusBar.foreground":"#ddebee",
-            "statusBar.border":"#fde001",
-            "statusBarItem.warningBackground": "#ff0000",
-            "statusBarItem.warningForeground": "#ddebee",
-
-            "gitDecoration.untrackedResourceForeground": "#299df0",
-            "gitDecoration.modifiedResourceForeground":"#32aba1",
-
-            "welcomePage.background": "#e8d85f4e",
-            "welcomePage.tileBackground": "#e8d85f4e",
-            "welcomePage.progress.foreground": "#299df0",
-            "textLink.foreground": "#299df0",
-            "welcomeOverlay.background": "#002B36",
-            "welcomePage.tileBorder": "#002B36",
-            "walkthrough.stepTitle.foreground": "#002B36",
-            "walkThrough.embeddedEditorBackground": "#002B36",
-        }
-    },
-    "intelephense.environment.phpVersion": "8.1.0",
-    "intelephense.environment.shortOpenTag": false,
     "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
     "xmlTools.splitAttributesOnFormat": true,
     "application.shellEnvironmentResolutionTimeout": 20,
     "genieai.response.showNotification": true,
     "genieai.promptPrefix.adhoc-enabled": false,
-    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+
+    "svelte.enable-ts-plugin": true,
+    "svg.preview.mode": "svg",
+    "[svg]": {
+
+        "editor.defaultFormatter": "jock.svg"
+    },
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "git.openRepositoryInParentFolders": "always",
+    "explorer.confirmDelete": false,
+    "phpsab.executablePathCBF": "phpcbf",
+    "phpsab.executablePathCS": "phpcs",
+    "phpsab.debug": true,
+    "namespaceResolver.sort.onSave": true,
+    "namespaceResolver.sort.natural": true,
+    "Prettier-SQL.keywordCase": "upper",
+    "Prettier-SQL.tabulateAlias": true,
+    "[sql]": {
+        "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+    },
+    "sqltools.autoConnectTo": "",
+    "sqltools.connections": [],
+    "sqltools.format": {
+        "linesBetweenQueries": 2,
+        "reservedWordCase": "upper"
+    },
+    "SQL-Formatter-VSCode.dialect": "mysql",
+    "intelephense.environment.phpVersion": " 8.2.15 ",
+    "intelephense.format.enable": false,
+    "cody.commandCodeLenses": true,
+    "cody.autocomplete.formatOnAccept": true,
+    "sqlfluff.dialect": "mysql",
+    "sqlfluff.format.languages": [
+        "sql",
+        "mysql",
+        "postgres"
+    ],
+    "cssvar.postcssPlugins": [],
+    "cSpell.userWords": [
+        "atlascode",
+        "smacss"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "elixir",
+        "erlang",
+        "git-commit",
+        "go",
+        "graphql",
+        "handlebars",
+        "haskell",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "jupyter",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "python",
+        "pug",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "scminput",
+        "swift",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "yaml",
+        "yml",
+        "astro"
+    ],
+    "cSpell.experimental.enableSettingsViewerV2": true,
+    "cSpell.language": "en,en-GB,lorem",
+    "cSpell.enableFiletypes": [
+        "!c",
+        "!cpp",
+        "!csharp",
+        "!go",
+        "!json",
+        "!python",
+        "!scala",
+        "PHPLog",
+        "ignore",
+        "sass",
+        "sass.hover",
+        "sql",
+        "styled-css",
+        "svelte",
+        "svg",
+        "xml"
+    ],
+    "diffEditor.maxComputationTime": 0,
+    "cSpell.showAutocompleteSuggestions": true,
+    "spellright.ignoreFiles": [
+        "**/.gitignore",
+        "**/.spellignore"
+    ],
+    "spellright.notificationClass": "warning",
+    "html.format.enable": false,
+    "supermaven.otherWarning": false,
+    "prettier.bracketSpacing": false,
+    "prettier.configPath": ".prettierrc",
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "workbench.preferredLightColorTheme": "Bnjmnrsh Solarized Light",
+    "cssCustomProperties.languages": [
+        "css", "scss", "less", "astro"
+    ],
+    "cssCustomProperties.files": [
+        "./src/*.css", "./src/*.astro", "./vendor/*.css"
+    ],
+    "workbench.colorTheme": "Bnjmnrsh Solarized Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "spellright.addToSystemDictionary": true,
+    "cssVariables.lookupFiles": [
+        "./src/*.css",
+        "./src/*.astro",
+        "./dist/*.sass",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less"
+    ],
+    "cssVariables.languages": [
+        "astro",
+        "svelte",
+        "vue",
+        "vue-html",
+        "vue-postcss",
+        "scss",
+        "postcss",
+        "less",
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "source.css.styled"
+    ],
+    "codeium.searchMaxWorkspaceFileCount": 3000,
+    "codeium.aggressiveShutdown": true,
+    "codeium.enableConfig": {
+        "*": true,
+        "Log": true
+    },
 }

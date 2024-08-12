@@ -26,5 +26,9 @@ alias composer="php /usr/local/bin/composer.phar"
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias restart="source ~/.zshrc && clear"
 
+# Better Commits
+alias bc="better-commits"
+
 # Load project specifc aliases (.gitignored)
 [ -r ~/.oh-my-zsh/custom/.project-aliases ] && source ~/.oh-my-zsh/custom/.project-aliases
+

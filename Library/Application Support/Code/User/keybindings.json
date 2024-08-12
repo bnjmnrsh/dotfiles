@@ -5,7 +5,7 @@
    **/
   {
     "key": "cmd+k cmd+e",
-    "command": "workbench.view.explorer && filesExplorerFocus"
+    "command": "workbench.files.action.focusFilesExplorer"
   },
     {
     "key": "cmd+k cmd+g",
@@ -51,7 +51,7 @@
    **/
   {
     "key": "cmd+k cmd+x",
-    "command": "workbench.extensions.action.showInstalledExtensions"
+    "command": "workbench.view.extensions"
   },
   /**
    * Git interface
@@ -101,5 +101,35 @@
 {
     "key": "shift+cmd+t shift+cmd+t",
     "command": "phpCreateClass.createTrait"
+},
+{
+    "key": "alt+cmd+/",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+},
+{
+    "key": "alt+\\",
+    "command": "-editor.action.inlineSuggest.trigger",
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+},
+{
+    "key": "alt+c",
+    "command": "editor.action.submitComment",
+    "when": "commentEditorFocused"
+},
+{
+    "key": "shift+cmd+enter",
+    "command": "-editor.action.submitComment",
+    "when": "commentEditorFocused"
+},
+{
+    "key": "alt+cmd+a",
+    "command": "notification.acceptPrimaryAction",
+    "when": "notificationFocus || notificationToastsVisible"
+},
+{
+    "key": "shift+cmd+a",
+    "command": "-notification.acceptPrimaryAction",
+    "when": "notificationFocus || notificationToastsVisible"
 }
 ]
