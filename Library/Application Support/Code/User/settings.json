@@ -1,6 +1,6 @@
 {
     "emmet.syntaxProfiles": {
-    "tpl": "html"
+        "tpl": "html"
     },
     "emmet.includeLanguages": {
         "smarty": "html"
@@ -15,56 +15,88 @@
         "*.php": "php",
         ".babelrc.js": "javascript",
         "*.hbs": "handlebars",
-        "*.mjs": "javascript"
+        "*.mjs": "javascript",
+        "*.ts": "typescript",
+        "*.mts": "typescript",
+        "*.astro": "astro",
+        "*.scss": "scss"
     },
-
     "auto-close-tag.fullMode": true,
     "auto-close-tag.SublimeText3Mode": true,
-
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
 
     // Language: PHP
-    "php.suggest.basic":false,
+    "php.suggest.basic": false,
+    "php.validate.executablePath": "/Users/anachronistic/Library/Application Support/Herd/bin/php",
     "php-docblocker.returnGap": true,
     "php-docblocker.alignParams": true,
     "php-docblocker.alignReturn": true,
     "php-docblocker.useShortNames": true,
-    "phpfmt.passes": ["AlignPHPCode"],
-    "phpserver.phpConfigPath": "./php.ini ",
+    "phpfmt.passes": [
+        "AlignPHPCode"
+    ],
+    "phpserver.phpConfigPath": "./php.ini",
     "phpCreateClass.finalClass": true,
     "phpCreateClass.strictTypes": true,
-
+    "phpsab.executablePathCBF": "phpcbf",
+    "phpsab.executablePathCS": "phpcs",
+    "phpsab.debug": true,
+    "intelephense.environment.phpVersion": "8.2.15",
+    "intelephense.format.enable": false,
     "namespaceResolver.sortNatural": true,
     "namespaceResolver.sortAlphabetically": true,
     "namespaceResolver.sortOnSave": true,
-    "php.validate.executablePath": "/usr/local/bin/php",
-
-
-
+    "namespaceResolver.sort.onSave": true,
+    "namespaceResolver.sort.natural": true,
     "smarty.highlight": true,
     "beautify.language": {
-        "html": ["smarty"]
+        "html": [
+            "smarty"
+        ]
     },
-
+    "Prettier-SQL.keywordCase": "upper",
+    "Prettier-SQL.tabulateAlias": true,
+    "sqltools.autoConnectTo": "",
+    "sqltools.connections": [],
+    "sqltools.format": {
+        "linesBetweenQueries": 2,
+        "reservedWordCase": "upper"
+    },
+    "sqlfluff.dialect": "mysql",
+    "sqlfluff.format.languages": [
+        "sql",
+        "mysql",
+        "postgres"
+    ],
+    "cssvar.postcssPlugins": [],
+    "SQL-Formatter-VSCode.dialect": "mysql",
     // Language: HTML
     "html.validate.scripts": false,
-    "html.format.endWithNewline": false,
     "html.format.wrapAttributes": "auto",
     "html.format.wrapLineLength": 120,
     "html.format.indentHandlebars": true,
-
+    "html.format.enable": false,
+    "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
+    "xmlTools.splitAttributesOnFormat": true,
     // Language: JavaScript / Typescript
     "javascript.validate.enable": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "javascript.format.enable": false,
     "typescript.tsserver.log": "off",
-
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "standard.usePackageJson": true,
+    "eslint.workingDirectories": [],
     "eslint.format.enable": true,
-
+    "eslint.useFlatConfig": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "astro",
+        "typescript",
+        "typescriptreact"
+    ],
     // Language: JSON
-
     // Language: CSS/SCSS/LESS
     // WATCH FOR COLLISIONS WITH STYLELINT
     "scss.lint.zeroUnits": "warning",
@@ -77,7 +109,6 @@
     "scss.lint.universalSelector": "warning",
     "scss.lint.importStatement": "warning",
     "scss.lint.important": "warning",
-
     "less.validate": false,
     "css.validate": false,
     "stylelint.validate": [
@@ -100,14 +131,56 @@
         "svelte",
         "astro",
         "xml",
-        "xsl",
+        "xsl"
     ],
     "stylelint.reportNeedlessDisables": true,
     "stylelint.reportInvalidScopeDisables": true,
-
+    "cssCustomProperties.languages": [
+        "css",
+        "scss",
+        "less",
+        "astro"
+    ],
+    "cssCustomProperties.files": [
+        "./src/*.css",
+        "./src/*.astro",
+        "./vendor/*.css"
+    ],
+    "cssVariables.lookupFiles": [
+        "./src/*.css",
+        "./src/*.astro",
+        "./dist/*.sass",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less"
+    ],
+    "cssVariables.languages": [
+        "astro",
+        "svelte",
+        "vue",
+        "vue-html",
+        "vue-postcss",
+        "scss",
+        "postcss",
+        "less",
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "source.css.styled"
+    ],
     // Spelling
+    "spellright.ignoreFiles": [
+        "**/.gitignore",
+        "**/.spellignore"
+    ],
+    "spellright.notificationClass": "warning",
+    "spellright.addToSystemDictionary": true,
+    "spellright.configurationScope": "user",
     "spellright.language": [
-        "en_GB",
         "en"
     ],
     "spellright.documentTypes": [
@@ -117,220 +190,22 @@
         "php",
         "javascript",
         "css",
-        "scss"
+        "scss",
+        "markdown",
+        "typescript"
     ],
     "spellright.groupDictionaries": false,
     "spellright.suggestionsInHints": true,
     "spellright.recheckOnSave": true,
     "spellright.languageContext": {
-        "strings": [ "en-GB" ],
-        "comments": [ "en-GB" ]
+        "strings": [
+            "en-GB"
+        ],
+        "comments": [
+            "en-GB"
+        ]
     },
-
-
-    // Formatters
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[xml]": {},
-    "[javascript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[php]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "StoilDobreff.php-resolver",
-    },
-    "[smarty]": {
-        // "editor.defaultFormatter": "aswinkumar863.smarty-template-support",
-    },
-    "[css]": {
-        "breadcrumbs.showConstants": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[handlebars]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-
-    "prettier.requireConfig": true,
-    "workbench.editor.showTabs": "multiple",
-    "workbench.sideBar.location": "right", // Medium
-    "workbench.statusBar.visible": true,
-    "breadcrumbs.enabled": true,
-
-    // A nice font
-    // "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
-    // "editor.fontFamily": "Inconsolata for Powerline",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "editor.fontWeight": "500",
-    "editor.accessibilitySupport": "off",
-    "editor.suggest.shareSuggestSelections": true,
-    "editor.inlineSuggest.enabled": true,
-    "editor.suggestSelection": "first",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
-    "editor.renderWhitespace": "none",
-    "editor.detectIndentation": false,
-    "editor.minimap.enabled": false,
-    "editor.linkedEditing": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit"
-    },
-    "explorer.confirmDragAndDrop": false,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-
-    // Color
-    "colorInfo.languages": [
-        {
-            "selector": "js",
-            "colors": "css"
-        },
-        {
-            "selector": "css",
-            "colors": "css"
-        },
-        {
-            "selector": "sass",
-            "colors": "css"
-        },
-        {
-            "selector": "scss",
-            "colors": "css"
-        },
-        {
-            "selector": "less",
-            "colors": "css"
-        },
-        {
-            "selector": "hbs",
-            "colors": "css"
-        },
-        {
-            "selector": "astro",
-            "colors": "css"
-        },
-    ],
-
-    // Git
-    "git.autofetch": true,
-    "git.suggestSmartCommit": false,
-    "git.confirmSync": false,
-    "git.allowForcePush": true,
-    "git.ignoreRebaseWarning": true,
-    "yaml.schemas": {
-        "file:///Users/anachronistic/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    },
-    "atlascode.bitbucket.enabled": true,
-    "atlascode.jira.enabled": true,
-    "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": true,
-        "markdown": false,
-        "php": true,
-        "javascript": false
-    },
-
-    // terminal
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Inconsolata for Powerline",
-    "terminal.integrated.fontWeightBold": "bold",
-    "terminal.integrated.lineHeight": 1.2,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.tabs.enabled": true,
-    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
-
-    "liveServer.settings.donotVerifyTags": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-
-    "todo-tree.general.statusBar": "tags",
-    "todo-tree.general.showActivityBarBadge": true,
-
-    "redhat.telemetry.enabled": true,
-    "vscode-edge-devtools.mirrorEdits": true,
-    "npm.keybindingsChangedWarningShown": true,
-    "tabnine.experimentalAutoImports": true,
-    "vscode-edge-devtools.browserFlavor": "Default",
-    "spellright.configurationScope": "user",
-    "editor.fontSize": 14,
-    "editor.lineHeight": 1.8,
-    "editor.fontVariations": false,
-    "workbench.editor.empty.hint": "hidden",
-    "workbench.preferredDarkColorTheme": "Bnjmnrsh Solarized Light",
-
-    "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
-    "xmlTools.splitAttributesOnFormat": true,
-    "application.shellEnvironmentResolutionTimeout": 20,
-    "genieai.response.showNotification": true,
-    "genieai.promptPrefix.adhoc-enabled": false,
-
-    "svelte.enable-ts-plugin": true,
-    "svg.preview.mode": "svg",
-    "[svg]": {
-
-        "editor.defaultFormatter": "jock.svg"
-    },
-    "editor.inlineSuggest.suppressSuggestions": true,
-    "git.openRepositoryInParentFolders": "always",
-    "explorer.confirmDelete": false,
-    "phpsab.executablePathCBF": "phpcbf",
-    "phpsab.executablePathCS": "phpcs",
-    "phpsab.debug": true,
-    "namespaceResolver.sort.onSave": true,
-    "namespaceResolver.sort.natural": true,
-    "Prettier-SQL.keywordCase": "upper",
-    "Prettier-SQL.tabulateAlias": true,
-    "[sql]": {
-        "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
-    },
-    "sqltools.autoConnectTo": "",
-    "sqltools.connections": [],
-    "sqltools.format": {
-        "linesBetweenQueries": 2,
-        "reservedWordCase": "upper"
-    },
-    "SQL-Formatter-VSCode.dialect": "mysql",
-    "intelephense.environment.phpVersion": " 8.2.15 ",
-    "intelephense.format.enable": false,
-    "cody.commandCodeLenses": true,
-    "cody.autocomplete.formatOnAccept": true,
-    "sqlfluff.dialect": "mysql",
-    "sqlfluff.format.languages": [
-        "sql",
-        "mysql",
-        "postgres"
-    ],
-    "cssvar.postcssPlugins": [],
+    "cSpell.showAutocompleteSuggestions": true,
     "cSpell.userWords": [
         "atlascode",
         "smacss"
@@ -405,60 +280,475 @@
         "svg",
         "xml"
     ],
-    "diffEditor.maxComputationTime": 0,
-    "cSpell.showAutocompleteSuggestions": true,
-    "spellright.ignoreFiles": [
-        "**/.gitignore",
-        "**/.spellignore"
-    ],
-    "spellright.notificationClass": "warning",
-    "html.format.enable": false,
-    "supermaven.otherWarning": false,
-    "prettier.bracketSpacing": false,
-    "prettier.configPath": ".prettierrc",
+    // Formatters
     "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        // "editor.defaultFormatter": "astro-build.astro-vscode"
     },
+    "[html]": {
+        // "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    "[xml]": {},
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[php]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "StoilDobreff.php-resolver"
+    },
+    "[smarty]": {
+        // "editor.defaultFormatter": "aswinkumar863.smarty-template-support",
+    },
+    "[css]": {
+        "breadcrumbs.showConstants": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+       // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[handlebars]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        // "editor.defaultFormatter": "svelte.svelte-vscode"
+        "svelte.enable-ts-plugin": true,
+    },
+    "[svg]": {
+        "editor.defaultFormatter": "jock.svg",
+        "svg.preview.mode": "svg",
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+    },
+    "prettier.documentSelectors": [
+        "**/*.astro"
+    ],
+    "prettier.bracketSpacing": false,
+    "prettier.requireConfig": true,
+
+    // A nice font
+    // "editor.fontFamily": "Inconsolata, Menlo, Monaco, 'Courier New', monospace",
+    // "editor.fontFamily": "Inconsolata for Powerline",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.8,
+    "editor.fontVariations": false,
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "500",
+    "editor.accessibilitySupport": "off",
+    "editor.suggest.shareSuggestSelections": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.renderWhitespace": "none",
+    "editor.detectIndentation": false,
+    "editor.minimap.enabled": false,
+    "editor.linkedEditing": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    // Appearence & Behaviour
     "workbench.preferredLightColorTheme": "Bnjmnrsh Solarized Light",
-    "cssCustomProperties.languages": [
-        "css", "scss", "less", "astro"
-    ],
-    "cssCustomProperties.files": [
-        "./src/*.css", "./src/*.astro", "./vendor/*.css"
-    ],
-    "workbench.colorTheme": "Bnjmnrsh Solarized Light",
+    "workbench.preferredDarkColorTheme": "Bnjmnrsh Solarized Light",
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "material-icon-theme",
-    "spellright.addToSystemDictionary": true,
-    "cssVariables.lookupFiles": [
-        "./src/*.css",
-        "./src/*.astro",
-        "./dist/*.sass",
-        "**/*.css",
-        "**/*.scss",
-        "**/*.sass",
-        "**/*.less"
-    ],
-    "cssVariables.languages": [
-        "astro",
-        "svelte",
-        "vue",
-        "vue-html",
-        "vue-postcss",
-        "scss",
-        "postcss",
-        "less",
-        "css",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "source.css.styled"
-    ],
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.showTabs": "multiple",
+    "workbench.sideBar.location": "right", // Medium
+    "workbench.statusBar.visible": true,
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": true,
+    "breadcrumbs.enabled": true,
+
+    "application.shellEnvironmentResolutionTimeout": 20,
+
+    // Git & Version Control
+    "git.autofetch": true,
+    "git.suggestSmartCommit": false,
+    "git.confirmSync": false,
+    "git.allowForcePush": true,
+    "git.ignoreRebaseWarning": true,
+    "git.openRepositoryInParentFolders": "always",
+    "atlascode.bitbucket.enabled": true,
+    "atlascode.jira.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false,
+        "yaml": false,
+        "php": true,
+        "javascript": true,
+        "html": true,
+        "typescript": true
+    },
+
+    // terminal
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.external.osxExec": "warp.app",
+    "terminal.integrated.fontFamily": "Inconsolata for Powerline",
+    "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+
+    // Misc plugin config
+    // Code Assistants
+    "genieai.response.showNotification": true,
+    "genieai.promptPrefix.adhoc-enabled": false,
+    "cody.commandCodeLenses": true,
+    "cody.autocomplete.formatOnAccept": true,
     "codeium.searchMaxWorkspaceFileCount": 3000,
     "codeium.aggressiveShutdown": true,
     "codeium.enableConfig": {
         "*": true,
-        "Log": true
+        "Log": true,
+        "markdown": true,
+        "editorconfig": true,
+        "ignore": true
     },
+    "supermaven.otherWarning": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "diffEditor.maxComputationTime": 0,
+    "todo-tree.general.statusBar": "tags",
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.mts",
+        "**/*.mjs",
+        "**/*.html",
+        "**/*.astro",
+        "**/*.vue",
+        "**/*.svelt",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.md",
+        "**/*.mdx"
+    ],
+    "todo-tree.general.schemes": [
+        "file",
+        "ssh",
+        "untitled",
+        "vscode-notebook-cell",
+        "ouptut"
+    ],
+    "todo-tree.general.tagGroups": {
+        "TODO": [
+            "TODO",
+            "@TODO",
+            "@ TODO"
+        ]
+    },
+    "todohighlight.keywords": [],
+
+
+    // Color
+    "colorInfo.languages": [
+        {
+            "selector": "js",
+            "colors": "css"
+        },
+        {
+            "selector": "css",
+            "colors": "css"
+        },
+        {
+            "selector": "sass",
+            "colors": "css"
+        },
+        {
+            "selector": "scss",
+            "colors": "css"
+        },
+        {
+            "selector": "less",
+            "colors": "css"
+        },
+        {
+            "selector": "hbs",
+            "colors": "css"
+        },
+        {
+            "selector": "astro",
+            "colors": "css"
+        }
+    ],
+    "workbench.settings.useSplitJSON": true,
+    "json.format.keepLines": true,
+    "chat.commandCenter.enabled": false,
+    "yaml.schemas": {
+        "file:///Users/anachronistic/.vscode/extensions/atlassian.atlascode-4.0.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": true,
+    "[sass]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "augment.chat.userGuidelines": "",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.nextEditSuggestions.extendedRange": true,
+    "github.copilot.chat.scopeSelection": true,
+    "github.copilot.chat.nesFetcher": "electron-fetch",
+    "github.copilot.chat.languageContext.typescript.includeDocumentation": true,
+    "github.copilot.chat.languageContext.typescript.enabled": true,
+    "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+    "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+    "github.copilot.chat.githubMcpServer.lockdown": true,
+    "github.copilot.chat.completionsFetcher": "electron-fetch",
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.chat.backgroundCompaction": true,
+    "github.copilot.chat.copilotMemory.enabled": true,
+    "github.copilot.chat.anthropic.tools.websearch.enabled": true,
+    "github.copilot.chat.githubMcpServer.enabled": true,
+    "github.copilot.chat.githubMcpServer.readonly": true,
+    "python.analysis.autoImportCompletions": true,
+    "terminal.integrated.suggest.enabled": false,
+    "vue.autoInsert.dotValue": true,
+    "chat.agent.maxRequests": 300,
+    "chat.tools.terminal.enableAutoApprove": true,
+    "chat.tools.terminal.autoApprove": {
+        "cd": true,
+        "echo": true,
+        "ls": true,
+        "dir": true,
+        "pwd": true,
+        "cat": true,
+        "[": true,
+        "test": true,
+        "head": true,
+        "tail": true,
+        "findstr": true,
+        "wc": true,
+        "tr": true,
+        "cut": true,
+        "cmp": true,
+        "which": true,
+        "basename": true,
+        "dirname": true,
+        "realpath": true,
+        "readlink": true,
+        "stat": true,
+        "file": true,
+        "od": true,
+        "du": true,
+        "df": true,
+        "sleep": true,
+        "nl": true,
+        "grep": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+status\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+log\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+log\\b.*\\s--output(=|\\s|$)/": false,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+show\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+diff\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+ls-files\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+grep\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+branch\\b/": true,
+        "/^git(\\s+(-C\\s+\\S+|--no-pager))*\\s+branch\\b.*\\s-(d|D|m|M|-delete|-force)\\b/": false,
+        "/^docker\\s+(ps|images|info|version|inspect|logs|top|stats|port|diff|search|events)\\b/": true,
+        "/^docker\\s+(container|image|network|volume|context|system)\\s+(ls|ps|inspect|history|show|df|info)\\b/": true,
+        "/^docker\\s+compose\\s+(ps|ls|top|logs|images|config|version|port|events)\\b/": true,
+        "Get-ChildItem": true,
+        "Get-Content": true,
+        "Get-Date": true,
+        "Get-Random": true,
+        "Get-Location": true,
+        "Set-Location": true,
+        "Write-Host": true,
+        "Write-Output": true,
+        "Out-String": true,
+        "Split-Path": true,
+        "Join-Path": true,
+        "Start-Sleep": true,
+        "Where-Object": true,
+        "/^Select-[a-z0-9]/i": true,
+        "/^Measure-[a-z0-9]/i": true,
+        "/^Compare-[a-z0-9]/i": true,
+        "/^Format-[a-z0-9]/i": true,
+        "/^Sort-[a-z0-9]/i": true,
+        "/^npm\\s+(ls|list|outdated|view|info|show|explain|why|root|prefix|bin|search|doctor|fund|repo|bugs|docs|home|help(-search)?)\\b/": true,
+        "/^npm\\s+config\\s+(list|get)\\b/": true,
+        "/^npm\\s+pkg\\s+get\\b/": true,
+        "/^npm\\s+audit$/": true,
+        "/^npm\\s+cache\\s+verify\\b/": true,
+        "/^yarn\\s+(list|outdated|info|why|bin|help|versions)\\b/": true,
+        "/^yarn\\s+licenses\\b/": true,
+        "/^yarn\\s+audit\\b(?!.*\\bfix\\b)/": true,
+        "/^yarn\\s+config\\s+(list|get)\\b/": true,
+        "/^yarn\\s+cache\\s+dir\\b/": true,
+        "/^pnpm\\s+(ls|list|outdated|why|root|bin|doctor)\\b/": true,
+        "/^pnpm\\s+licenses\\b/": true,
+        "/^pnpm\\s+audit\\b(?!.*\\bfix\\b)/": true,
+        "/^pnpm\\s+config\\s+(list|get)\\b/": true,
+        "npm ci": true,
+        "/^yarn\\s+install\\s+--frozen-lockfile\\b/": true,
+        "/^pnpm\\s+install\\s+--frozen-lockfile\\b/": true,
+        "column": true,
+        "/^column\\b.*\\s-c\\s+[0-9]{4,}/": false,
+        "date": true,
+        "/^date\\b.*\\s(-s|--set)\\b/": false,
+        "find": true,
+        "/^find\\b.*\\s-(delete|exec|execdir|fprint|fprintf|fls|ok|okdir)\\b/": false,
+        "rg": true,
+        "/^rg\\b.*\\s(--pre|--hostname-bin)\\b/": false,
+        "sed": true,
+        "/^sed\\b.*\\s(-[a-zA-Z]*(e|f)[a-zA-Z]*|--expression|--file)\\b/": false,
+        "/^sed\\b.*s\\/.*\\/.*\\/[ew]/": false,
+        "/^sed\\b.*;W/": false,
+        "sort": true,
+        "/^sort\\b.*\\s-(o|S)\\b/": false,
+        "tree": true,
+        "/^tree\\b.*\\s-o\\b/": false,
+        "/^xxd$/": true,
+        "/^xxd\\b(\\s+-\\S+)*\\s+[^-\\s]\\S*$/": true,
+        "rm": false,
+        "rmdir": false,
+        "del": false,
+        "/^Remove-Item\\b/i": false,
+        "Remove-Item": false,
+        "ri": false,
+        "rd": false,
+        "erase": false,
+        "dd": false,
+        "kill": false,
+        "ps": false,
+        "top": false,
+        "Stop-Process": false,
+        "spps": false,
+        "taskkill": false,
+        "taskkill.exe": false,
+        "curl": false,
+        "wget": false,
+        "Invoke-RestMethod": false,
+        "Invoke-WebRequest": false,
+        "irm": false,
+        "iwr": false,
+        "chmod": false,
+        "chown": false,
+        "Set-ItemProperty": false,
+        "sp": false,
+        "Set-Acl": false,
+        "jq": false,
+        "xargs": false,
+        "eval": false,
+        "git -C /Users/anachronistic/Documents/WebDev/theDirectors": true,
+        "/^(GIT_PAGER=\\S+\\s+)*(PAGER=\\S+\\s+)*git\\s+-C\\s+\\S+\\s+--no-pager\\s+diff\\s+--cached\\b/": true,
+        "Invoke-Expression": false,
+        "iex": false,
+        "git -C /Users/anachronistic/Documents/WebDev/payroll": true,
+        "pnpm": true,
+        "gh": true,
+        "git remote": true
+    },
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://www.gov.uk": {
+            "approveRequest": true,
+            "approveResponse": false
+        },
+        "https://raw.githubusercontent.com": {
+            "approveRequest": false,
+            "approveResponse": true
+        },
+        "https://github.com": {
+            "approveRequest": false,
+            "approveResponse": true
+        },
+        "https://standardschema.dev": true,
+        "https://developer.wordpress.org": {
+            "approveRequest": true,
+            "approveResponse": false
+        }
+    },
+    "chat.editing.explainChanges.enabled": true,
+    "chat.restoreLastPanelSession": true,
+    "chat.viewProgressBadge.enabled": true,
+    "chat.tools.terminal.autoReplyToPrompts": true,
+    "chat.mcp.gallery.enabled": true,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "github.copilot.chat.agent.autoFix": true,
+    "chatgpt.localeOverride": "en-US",
+    "chatgpt.followUpQueueMode": "steer",
+    "json.schemaDownload.trustedDomains": {
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemas.wp.org": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+    },
+    "[plaintext]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false
+    },
+    "yaml.disableSchemaDetection": [
+        "**/docker-compose.yml",
+        "**/docker-compose.yaml",
+        "**/docker-compose.*.yml",
+        "**/docker-compose.*.yaml",
+        "**/compose.yml",
+        "**/compose.yaml",
+        "**/compose.*.yml",
+        "**/compose.*.yaml",
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ],
+    "github.copilot.chat.claudeAgent.allowAutoPermissions": true,
 }

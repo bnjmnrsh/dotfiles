@@ -2,10 +2,10 @@
 	name = Benjamin Rush
 	email = bnjmnrsh@gmail.com
 [core]
-	excludesfile = /Users/anachronistic/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = nano
 [commit]
-	template = /Users/anachronistic/.stCommitMsg
+	template = ~/.stCommitMsg
 [credential]
 	helper = osxkeychain
 [push]
@@ -40,3 +40,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential

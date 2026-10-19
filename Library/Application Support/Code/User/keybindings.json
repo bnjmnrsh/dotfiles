@@ -123,6 +123,16 @@
     "when": "commentEditorFocused"
 },
 {
+    "key": "alt+cmd+b",
+    "command": "-notification.acceptPrimaryAction",
+    "when": "notificationFocus || notificationToastsVisible"
+},
+{
+    "key": "cmd+k cmd+m",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+},
+{
     "key": "alt+cmd+a",
     "command": "notification.acceptPrimaryAction",
     "when": "notificationFocus || notificationToastsVisible"
@@ -131,5 +141,68 @@
     "key": "shift+cmd+a",
     "command": "-notification.acceptPrimaryAction",
     "when": "notificationFocus || notificationToastsVisible"
-}
+},
+{
+    "key": "shift+cmd+l",
+    "command": "vscode-augment.focusAugmentPanel"
+},
+{
+    "key": "ctrl+cmd+i",
+    "command": "-vscode-augment.focusAugmentPanel"
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\r\n"
+    },
+    "when": "terminalFocus"
+},
+{
+    "key": "alt+cmd+k alt+cmd+z",
+    "command": "workbench.action.toggleZenMode",
+    "when": "!isAuxiliaryWindowFocusedContext"
+},
+{
+    "key": "cmd+k z",
+    "command": "-workbench.action.toggleZenMode",
+    "when": "!isAuxiliaryWindowFocusedContext"
+},
+{
+    "key": "alt+cmd+k alt+cmd+m",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+},
+{
+    "key": "alt+cmd+h",
+    "command": "workbench.action.maximizeEditorHideSidebar"
+},
+{
+    "key": "alt+cmd+n",
+    "command": "workbench.action.toggleSidebarVisibility"
+},
+{
+    "key": "cmd+k cmd+m",
+    "command": "-workbench.action.toggleMaximizeEditorGroup",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+},
+{
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+},
+{
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+},
+{
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+},
+{
+    "key": "alt+cmd+o shift+alt+cmd+o",
+    "command": "git.openRepository",
+    "when": "!operationInProgress"
+},
 ]

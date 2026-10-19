@@ -1,0 +1,42 @@
+# Private keys and authentication material
+.ssh/
+.gnupg/
+.aws/
+.azure/
+.codex/
+.claude/
+.claude.json
+.docker/
+.kube/
+.wrangler/
+.netrc
+.git-credentials
+.npmrc
+.config/gcloud/
+.config/.wrangler/
+.volta/
+.nvm/
+.project-aliases
+.env
+.env.*
+
+# Shell history and machine-local overrides
+.zsh_history
+.bash_history
+.sh_history
+.python_history
+.zsh_sessions/
+.zshrc.local
+.zprofile.local
+.zshenv.local
+
+# Private application state and aliases
+.config/gh/
+.config/direnv/
+.config/private/
+.config/dotfiles/private/
+.aliases.private
+.local/state/dotfiles/
+
+# The bare repository itself
+.cfg/

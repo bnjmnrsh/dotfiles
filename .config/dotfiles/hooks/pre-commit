@@ -1,0 +1,26 @@
+#!/bin/sh
+set -eu
+
+dotfiles_home=${HOME:?HOME must be set}
+dotfiles_git="$dotfiles_home/.cfg"
+dotfiles_config="$dotfiles_home/.config/dotfiles"
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  printf '%s\n' 'pre-commit: gitleaks is required; install it before committing.' >&2
+  exit 1
+fi
+
+# Protect local-only material even if it was explicitly force-added.
+private_paths='(^|/)\.cfg(/|$)|^\.ssh(/|$)|^\.gnupg(/|$)|^\.aws(/|$)|^\.azure(/|$)|^\.codex(/|$)|^\.claude(/|$)|^\.claude\.json$|^\.docker(/|$)|^\.kube(/|$)|^\.wrangler(/|$)|^\.netrc$|^\.git-credentials$|^\.npmrc$|^\.config/gcloud(/|$)|^\.config/\.wrangler(/|$)|(^|/)\.project-aliases$|(^|/)\.env(\..*)?$|^\.zsh_history$|^\.bash_history$|^\.sh_history$|^\.python_history$|^\.zsh_sessions(/|$)|^\.zshrc\.local$|^\.zprofile\.local$|^\.zshenv\.local$|^\.config/gh(/|$)|^\.config/direnv(/|$)|^\.config/private(/|$)|^\.config/dotfiles/private(/|$)|^\.aliases\.private$|^\.local/state/dotfiles(/|$)'
+
+if /usr/bin/git --git-dir="$dotfiles_git" --work-tree="$dotfiles_home" diff --cached --diff-filter=ACMR --name-only -z |
+  tr '\0' '\n' |
+  /usr/bin/grep -E "$private_paths" >/dev/null; then
+  printf '%s\n' 'pre-commit: staged private path rejected.' >&2
+  exit 1
+fi
+
+# gitleaks redacts matches, so hook output never reveals detected values.
+GIT_DIR="$dotfiles_git" GIT_WORK_TREE="$dotfiles_home" \
+  exec gitleaks protect --staged --redact --no-banner --source "$dotfiles_home" \
+  --gitleaks-ignore-path "$dotfiles_config/gitleaksignore"
