@@ -13,12 +13,12 @@ The shell function must be defined by your shell configuration so it works from 
 
 ## First setup or recovery
 
-Install dependencies before checkout. The expected macOS setup includes Homebrew, Zsh, Oh My Zsh, Volta, Laravel Herd, direnv, Composer, the fonts used by your terminal and editor, and the editor extensions you rely on. Existing editor settings name FiraCode and Inconsolata for Powerline; install fonts only from a trusted source if the restored machine does not have them. Package-manager pins in their own repositories remain independent of this dotfiles repository.
+Install the minimal checkout dependency before checkout: the pre-commit hook requires `gitleaks`. The recovery baseline and the optional application, font, editor, and legacy-tool instructions are in [`.config/dotfiles/dependency-recovery.md`](.config/dotfiles/dependency-recovery.md). Package-manager pins in their own repositories remain independent of this dotfiles repository.
 
 Once Homebrew is installed, install the command-line dependencies without updating every formula:
 
 ```sh
-HOMEBREW_NO_AUTO_UPDATE=1 /opt/homebrew/bin/brew install zsh composer direnv gh gitleaks
+HOMEBREW_NO_AUTO_UPDATE=1 /opt/homebrew/bin/brew install gitleaks
 ```
 
 Install Oh My Zsh before checkout so its framework files exist first. Any collisions reported by checkout use the backup procedure below; do not force either installation.
@@ -59,10 +59,19 @@ Do not use a forced checkout. Once the checkout succeeds, run the tracked bootst
 
 It installs the tracked private exclusion list into `~/.cfg/info/exclude` while retaining unrelated local patterns, and it configures hooks only for this bare repository. It does not change global Git configuration or hooks in other repositories.
 
+After checkout and setup succeed, restore and check the small Homebrew baseline without an automatic update or formula upgrade:
+
+```sh
+HOMEBREW_NO_AUTO_UPDATE=1 /opt/homebrew/bin/brew bundle --no-upgrade \
+  --file="$HOME/.config/dotfiles/Brewfile"
+HOMEBREW_NO_AUTO_UPDATE=1 /opt/homebrew/bin/brew bundle check --no-upgrade \
+  --file="$HOME/.config/dotfiles/Brewfile"
+```
+
 `~/.zshrc.local` is an optional, untracked file for machine-specific shell settings and secrets. Create it only after the managed shell configuration is restored, and use owner-only permissions if it contains secrets:
 
 ```sh
-install -m 600 /dev/null "$HOME/.zshrc.local"
+test -e "$HOME/.zshrc.local" || install -m 600 /dev/null "$HOME/.zshrc.local"
 ```
 
 ## Global Node tools
@@ -84,14 +93,18 @@ Backstop requires its installed Puppeteer Chrome for Testing build on Apple Sili
 volta run --node 22.11.0 --bundled-npm node "$VOLTA_HOME/tools/image/packages/backstopjs/lib/node_modules/backstopjs/node_modules/puppeteer/lib/cjs/puppeteer/node/cli.js" browsers install chrome@127.0.6533.88
 ```
 
-The tracked wrappers restore two older commands in isolated prefixes. They do not replace the Volta `wrangler` and `wrangler2` commands or the existing `trash` command:
+The tracked wrappers restore two older commands in isolated prefixes. They do not replace the Volta `wrangler` and `wrangler2` commands or the existing `trash` command. Use the tracked manifests and locks, rather than resolving packages again:
 
 ```sh
 wrangler_prefix="$HOME/.local/share/volta-legacy-tools/wrangler-2.1.6"
 trash_prefix="$HOME/.local/share/volta-legacy-tools/trash-cli-6.0.0"
 mkdir -p "$wrangler_prefix" "$trash_prefix"
-volta run --node 18.16.0 --bundled-npm npm --prefix "$wrangler_prefix" install --save-exact wrangler@2.1.6
-volta run --node 22.11.0 --bundled-npm npm --prefix "$trash_prefix" install --save-exact trash-cli@6.0.0
+cp "$HOME/.config/dotfiles/legacy-tools/wrangler-2.1.6/package.json" "$wrangler_prefix/"
+cp "$HOME/.config/dotfiles/legacy-tools/wrangler-2.1.6/package-lock.json" "$wrangler_prefix/"
+cp "$HOME/.config/dotfiles/legacy-tools/trash-cli-6.0.0/package.json" "$trash_prefix/"
+cp "$HOME/.config/dotfiles/legacy-tools/trash-cli-6.0.0/package-lock.json" "$trash_prefix/"
+volta run --node 18.16.0 --bundled-npm npm ci --prefix "$wrangler_prefix"
+volta run --node 22.11.0 --bundled-npm npm ci --prefix "$trash_prefix"
 wrangler2-legacy --version
 trash-node --version
 ```

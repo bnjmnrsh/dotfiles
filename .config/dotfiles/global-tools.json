@@ -39,7 +39,9 @@
       "prefix": "$HOME/.local/share/volta-legacy-tools/wrangler-2.1.6",
       "command": "wrangler2-legacy",
       "entrypoint": "node_modules/wrangler/bin/wrangler.js",
-      "package_lock_sha256": "b13b4797bdbfc4e807635ea22880c67ead563f2e3d8c52eb5f0ef210747fff88"
+      "package_lock_sha256": "9749c0434b8c86b3e212d6e4c76b59318930c895dda2e41e14adf35674484314",
+      "recovery_package_manifest": "$HOME/.config/dotfiles/legacy-tools/wrangler-2.1.6/package.json",
+      "recovery_package_lock": "$HOME/.config/dotfiles/legacy-tools/wrangler-2.1.6/package-lock.json"
     },
     {
       "name": "trash-cli",
@@ -48,7 +50,9 @@
       "prefix": "$HOME/.local/share/volta-legacy-tools/trash-cli-6.0.0",
       "command": "trash-node",
       "entrypoint": "node_modules/trash-cli/cli.js",
-      "package_lock_sha256": "48d2e3d08c39ca8d41fc13b79f0be6d3276e2a4b09c9ae555a67aacc56b81448"
+      "package_lock_sha256": "2af82be86ed06dfcd32a798e50a50131673910afee8b3636929f27f13e632188",
+      "recovery_package_manifest": "$HOME/.config/dotfiles/legacy-tools/trash-cli-6.0.0/package.json",
+      "recovery_package_lock": "$HOME/.config/dotfiles/legacy-tools/trash-cli-6.0.0/package-lock.json"
     }
   ]
 }

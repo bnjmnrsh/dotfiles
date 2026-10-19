@@ -1,0 +1,7 @@
+brew "composer"
+brew "direnv"
+brew "gh"
+brew "gitleaks"
+brew "ripgrep"
+brew "shellcheck"
+brew "trash"
