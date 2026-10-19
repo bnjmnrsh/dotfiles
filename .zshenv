@@ -12,7 +12,7 @@ fi
 # Volta owns Node.js and package-manager selection. Keep standalone pnpm tools
 # available only after Volta's shims, so repository pins continue to win.
 export VOLTA_HOME="${VOLTA_HOME:-$HOME/.volta}"
-path=("$VOLTA_HOME/bin" $path)
+path=("$VOLTA_HOME/bin" $path "$HOME/.local/bin")
 
 export PNPM_HOME="${PNPM_HOME:-$HOME/Library/pnpm}"
 path=($path "$PNPM_HOME")

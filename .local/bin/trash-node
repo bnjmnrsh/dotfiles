@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+volta_home="${VOLTA_HOME:-$HOME/.volta}"
+entry="$HOME/.local/share/volta-legacy-tools/trash-cli-6.0.0/node_modules/trash-cli/cli.js"
+
+if [ ! -x "$volta_home/bin/volta" ] || [ ! -r "$entry" ]; then
+  printf '%s\n' 'trash-node dependencies are missing; follow the global tools recovery steps in ~/README.md.' >&2
+  exit 127
+fi
+
+exec "$volta_home/bin/volta" run --node 22.11.0 --bundled-npm node "$entry" "$@"

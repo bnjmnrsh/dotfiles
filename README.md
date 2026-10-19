@@ -30,7 +30,7 @@ RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubuserconte
 Volta is the preferred manager for Node and pnpm. After Volta itself is installed and available, restore the current tool defaults:
 
 ```sh
-volta install node@24.11.0 npm@11.16.0 pnpm@11.7.0
+volta install node@24.11.0 npm@11.16.0 pnpm@11.7.0 yarn@4.0.0-rc.42
 ```
 
 After cloning the bare repository, restore files without overwriting anything already present:
@@ -64,6 +64,39 @@ It installs the tracked private exclusion list into `~/.cfg/info/exclude` while 
 ```sh
 install -m 600 /dev/null "$HOME/.zshrc.local"
 ```
+
+## Global Node tools
+
+`~/.config/dotfiles/global-tools.json` records the installed Volta package names, versions, commands, and Node runtimes. Fetch the additional runtimes without changing the default Node version, then restore each global tool with its recorded runtime:
+
+```sh
+volta fetch node@18.16.0 node@20.18.0 node@20.20.0 node@22.11.0
+volta run --node 18.16.0 --bundled-npm npm install --global gitmoji-cli@8.2.3
+volta run --node 20.18.0 --bundled-npm npm install --global better-commits@1.15.7 generator-code@1.11.10 task-master-ai@0.25.1 yo@5.1.0
+volta run --node 20.20.0 --bundled-npm npm install --global wrangler@4.69.0
+volta run --node 22.11.0 --bundled-npm npm install --global backstopjs@6.3.25 npm-deprecated-check@1.7.0 sassdoc@2.7.4
+volta run --node 24.11.0 --bundled-npm npm install --global http-server@14.1.1 meta@2.2.25 prettier@3.3.3
+```
+
+Backstop requires its installed Puppeteer Chrome for Testing build on Apple Silicon. Restore the version used by Backstop rather than using a separate latest-version installer:
+
+```sh
+volta run --node 22.11.0 --bundled-npm node "$VOLTA_HOME/tools/image/packages/backstopjs/lib/node_modules/backstopjs/node_modules/puppeteer/lib/cjs/puppeteer/node/cli.js" browsers install chrome@127.0.6533.88
+```
+
+The tracked wrappers restore two older commands in isolated prefixes. They do not replace the Volta `wrangler` and `wrangler2` commands or the existing `trash` command:
+
+```sh
+wrangler_prefix="$HOME/.local/share/volta-legacy-tools/wrangler-2.1.6"
+trash_prefix="$HOME/.local/share/volta-legacy-tools/trash-cli-6.0.0"
+mkdir -p "$wrangler_prefix" "$trash_prefix"
+volta run --node 18.16.0 --bundled-npm npm --prefix "$wrangler_prefix" install --save-exact wrangler@2.1.6
+volta run --node 22.11.0 --bundled-npm npm --prefix "$trash_prefix" install --save-exact trash-cli@6.0.0
+wrangler2-legacy --version
+trash-node --version
+```
+
+NVM remains installed because the Tachyons/Pattern Lab and Astro source trees still select Node through `.nvmrc` files. Their project configurations have not been migrated. This migration restores no NVM global packages and does not add NVM initialization to the shell.
 
 ## Safe changes
 

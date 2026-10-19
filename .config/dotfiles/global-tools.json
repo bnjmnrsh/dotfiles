@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "volta": {
+    "default_node": "24.11.0",
+    "default_npm": "11.16.0",
+    "default_pnpm": "11.7.0",
+    "default_yarn": "4.0.0-rc.42"
+  },
+  "global_packages": [
+    {
+      "name": "backstopjs",
+      "version": "6.3.25",
+      "node": "22.11.0",
+      "command": "backstop",
+      "browser": {
+        "name": "Chrome for Testing",
+        "version": "127.0.6533.88",
+        "platform": "mac_arm"
+      }
+    },
+    { "name": "better-commits", "version": "1.15.7", "node": "20.18.0", "commands": ["better-commits-init", "better-commits", "better-branch", "bcommits", "git-bc"] },
+    { "name": "generator-code", "version": "1.11.10", "node": "20.18.0" },
+    { "name": "gitmoji-cli", "version": "8.2.3", "node": "18.16.0", "command": "gitmoji" },
+    { "name": "http-server", "version": "14.1.1", "node": "24.11.0", "command": "http-server" },
+    { "name": "meta", "version": "2.2.25", "node": "24.11.0", "command": "meta" },
+    { "name": "npm-deprecated-check", "version": "1.7.0", "node": "22.11.0", "command": "ndc" },
+    { "name": "pnpm", "version": "11.7.0", "node": "24.11.0", "commands": ["pnpm", "pnpx", "pn", "pnx"] },
+    { "name": "prettier", "version": "3.3.3", "node": "24.11.0", "command": "prettier" },
+    { "name": "sassdoc", "version": "2.7.4", "node": "22.11.0", "command": "sassdoc" },
+    { "name": "task-master-ai", "version": "0.25.1", "node": "20.18.0", "commands": ["task-master", "task-master-mcp", "task-master-ai"] },
+    { "name": "wrangler", "version": "4.69.0", "node": "20.20.0", "commands": ["wrangler", "wrangler2"] },
+    { "name": "yo", "version": "5.1.0", "node": "20.18.0", "commands": ["yo", "yo-complete"] }
+  ],
+  "isolated_legacy_tools": [
+    {
+      "name": "wrangler",
+      "version": "2.1.6",
+      "node": "18.16.0",
+      "prefix": "$HOME/.local/share/volta-legacy-tools/wrangler-2.1.6",
+      "command": "wrangler2-legacy",
+      "entrypoint": "node_modules/wrangler/bin/wrangler.js",
+      "package_lock_sha256": "b13b4797bdbfc4e807635ea22880c67ead563f2e3d8c52eb5f0ef210747fff88"
+    },
+    {
+      "name": "trash-cli",
+      "version": "6.0.0",
+      "node": "22.11.0",
+      "prefix": "$HOME/.local/share/volta-legacy-tools/trash-cli-6.0.0",
+      "command": "trash-node",
+      "entrypoint": "node_modules/trash-cli/cli.js",
+      "package_lock_sha256": "48d2e3d08c39ca8d41fc13b79f0be6d3276e2a4b09c9ae555a67aacc56b81448"
+    }
+  ]
+}
